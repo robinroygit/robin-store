@@ -1,9 +1,119 @@
+import { useEffect } from "react";
+import { useParams } from "react-router-dom";
 import styled from "styled-components";
+import MyImage from "./components/MyImage";
+import PageNavigation from "./components/PageNavigation";
+import { useProductContext } from "./context/ProductContext";
+import FormatPrice from "./helper/FormatPrice";
+import { Container } from "./styles/Container";
+import {TbReplace, TbTruckDelivery} from "react-icons/tb"
+import {MdSecurity} from "react-icons/md";
+import Stars from "./components/Stars";
+import AddToCart from "./components/AddToCart";
+
+const API = "https://api.pujakaitem.com/api/products";
+
+const SingleProduct = () => {
+  const { getSingleProduct, isSingleLoading, singleProduct } = useProductContext();
+
+
+  const { id } = useParams();
+  const {
+    // id: alias,
+    name,
+    company,
+    price,
+    description,
+    category,
+    stock,
+    stars,
+    reviews,
+    image,
+  } = singleProduct;
+
+
+  useEffect(() => {
+    getSingleProduct(`${API}?id=${id}`);
  
-const SingleProduct = () =>{
-  
-  return <Wrapper><h1>singleProduct</h1></Wrapper>;
-}
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  },[]);
+ 
+ 
+  // singleloading state... 🔶
+  if (isSingleLoading) {
+    return <div className="page_loading">loading....</div>;
+  }
+
+  return (
+    <Wrapper>
+      <PageNavigation title={category} />
+
+      <Container className="container">
+        <div className="grid grid-two-column">
+
+        <div className="product-images">
+          <MyImage imgs={image} />
+        </div>
+
+        <div className="product-data">
+          <h2>{name}</h2>
+          <Stars stars={stars}  reviews={reviews}/>
+          {/* <p>{stars}</p>
+          <p>{reviews}</p> */}
+          <p className="product-data-price">
+            MPR:{" "}
+            <del>
+              <FormatPrice price={price + 25000}></FormatPrice>
+            </del>
+          </p>
+
+          <p className="product-data-price product-data-real-price">
+            Deal Of The Day:<FormatPrice price={price}/>
+          </p>
+          <p>{description}</p>
+          <div className="product-data-warranty">
+            <div className="product-warranty-data">
+              <TbTruckDelivery className='warranty-icon'/>
+              <p>Free Delivery</p>
+            </div>
+
+
+            <div className="product-warranty-data">
+              <TbReplace className='warranty-icon'/>
+              <p>30 Days Replacement</p>
+            </div>
+
+            <div className="product-warranty-data">
+              <TbTruckDelivery className='warranty-icon'/>
+              <p>Cash On Delivery</p>
+            </div>
+
+            <div className="product-warranty-data">
+              <MdSecurity className='warranty-icon'/>
+              <p>2 Year Warranty</p>
+            </div>
+            </div>
+            <div className="product-data-info">
+              <p>Available: 
+              <span>
+              {stock>0?"In Stock":"Not Available"}
+              </span>
+              </p>
+
+              {/* <p>ID:{id}</p> */}
+              <p>Brand:{company}</p>
+            </div>
+            <hr />
+            {stock>0 && <AddToCart product={singleProduct}/> }
+
+        </div>
+        </div>
+       
+
+      </Container>
+    </Wrapper>
+  );
+};
 
 const Wrapper = styled.section`
   .container {

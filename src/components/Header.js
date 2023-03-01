@@ -3,11 +3,12 @@ import { NavLink } from 'react-router-dom'
 import styled from "styled-components"
 import Nav from "./Nav"
 
+
 const Header = () => {
   return (
     <MainHeader>
     <NavLink to={"/"}>
-        <img src='./images/logo2.png' alt="my logo imge"/>
+        <img src="./images/logo21.png" alt="my logo imge" className='logo'/>
     </NavLink>
     <Nav/>
 
@@ -24,8 +25,10 @@ align-items: center;
 position:relative;
 
 .logo{
-    height: 5rem;
-
+    height: 8rem;
+    width: 38rem;
+    padding: 0;
+    object-fit: cover;
 }
 
 
