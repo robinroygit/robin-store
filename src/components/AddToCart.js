@@ -4,12 +4,12 @@ import { FaCheck } from "react-icons/fa";
 import CardAmountToggle from "./CardAmountToggle";
 import { NavLink } from "react-router-dom";
 import { Button } from "../styles/Button";
-import { useCartContex } from "../context/cartContex";
+import { useCartContext } from "../context/cartContex";
 
 
 const AddToCart = ({ product }) => {
 
-  const {addToCart} = useCartContex();
+  const {addToCart} = useCartContext();
   const { id, colors, stock } = product;
 
   const [color, setColor] = useState(colors[0]);

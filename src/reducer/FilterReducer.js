@@ -7,7 +7,6 @@ const FilterRecuder = (state, action) => {
       // let maxPrice =priceArr.reduce((initialVal,curVal)=> Math.max(initialVal,curVal),0)
 
       let maxPrice = Math.max(...priceArr);
-      console.log(maxPrice);
 
       return {
         ...state,
@@ -133,7 +132,7 @@ const FilterRecuder = (state, action) => {
           colors: "All",
           maxPrice: state.filters.maxPrice,
           price: state.filters.maxPrice ,
-          minPrice: state.filters .minPrice,
+          minPrice: state.filters.minPrice,
         },
       };
 
