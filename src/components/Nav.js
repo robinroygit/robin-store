@@ -4,8 +4,8 @@ import styled from "styled-components";
 import {FiShoppingCart} from "react-icons/fi"
 import { CgMenu,CgClose } from "react-icons/cg"
 import { useCartContext } from '../context/cartContex';
-import { Button } from '../styles/Button';
 import { useAuth0 } from "@auth0/auth0-react";
+import { Button3 } from '../styles/Button3';
 
 
 const Nav = () => {
@@ -41,9 +41,9 @@ const Nav = () => {
 {/* login logout button  */}
 
 {
-  isAuthenticated? <li> <Button onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}>
+  isAuthenticated? <li> <Button3 onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}>
       Log Out
-    </Button></li>:<li><Button onClick={() => loginWithPopup()}>Log In</Button></li>
+    </Button3></li>:<li><Button3 onClick={() => loginWithPopup()}>Log In</Button3></li>
 
 }
 

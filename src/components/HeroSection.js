@@ -1,38 +1,45 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom';
-import styled from 'styled-components';
-import { Button } from '../styles/Button';
+import React from "react";
+import { NavLink } from "react-router-dom";
+import styled from "styled-components";
 
-const HeroSection = ({myData}) => {
-    const { name } = myData;
+import { Button2 } from "../styles/Button2";
+
+const HeroSection = ({ myData }) => {
+  const { name } = myData;
   return (
-
     <Wrapper>
-    <div className="container">
-    <div className="grid grid-two-column">
-      <div className="hero-section-data">
-        <p className="intro-data">welcome to</p>
+      <div className="container">
+        <div className="grid grid-two-column">
+          <div className="hero-section-data">
+            <p className="intro-data">welcome to</p>
 
-        <h1>{name}</h1>
-        <p>this has an elegant and stylish look with a variety of fabulous features. Product sliders, shopping cart, newsletter subscription, social media buttons, Start taking new orders after the site launch and slowly and steadily grow your webshop to the desired goals.</p>
-        <NavLink>
-           <Button>click here </Button>
-        </NavLink>
+            <h1>{name}</h1>
+            <p>
+              this has an elegant and stylish look with a variety of fabulous
+              features. Product sliders, shopping cart, newsletter subscription,
+              social media buttons, Start taking new orders after the site
+              launch and slowly and steadily grow your webshop to the desired
+              goals.
+            </p>
+            <NavLink>
+              <Button2 className="button-53">click here </Button2>
+            </NavLink>
+          </div>
+          {/* Home page image  */}
+          <div className="hero-section-image">
+            <figure>
+              <img
+                src="images/hero2.png"
+                alt="hero section img"
+                className="img-style"
+              />
+            </figure>
+          </div>
+        </div>
       </div>
-      {/* Home page image  */}
-      <div className='hero-section-image'>
-      <figure>
-        <img src="images/hero2.png" alt="hero section img" className='img-style' />
-      </figure>
-
-      </div>
-    </div>
-
-    </div>
-  </Wrapper>
-
-  )
-}
+    </Wrapper>
+  );
+};
 
 const Wrapper = styled.section`
   padding: 12rem 0;
@@ -92,4 +99,4 @@ const Wrapper = styled.section`
   }
 `;
 
-export default HeroSection
+export default HeroSection;
