@@ -21,7 +21,7 @@ const HeroSection = ({ myData }) => {
               launch and slowly and steadily grow your webshop to the desired
               goals.
             </p>
-            <NavLink>
+            <NavLink to="/products">
               <Button2 className="button-53">click here </Button2>
             </NavLink>
           </div>

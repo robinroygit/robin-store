@@ -20,7 +20,7 @@ export const Button3 = styled.button`
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
-  width: 10rem;
+  width: 12rem;
   word-break: break-word;
   border: 0;
 

@@ -33,7 +33,7 @@ const CartProvider = ({ children }) => {
     dispatch({ type: "SET_DECREMENT", payload: id });
   };
 
-  const setIncrement = (id) => {
+  const setIncrease = (id) => {
     dispatch({ type: "SET_INCREMENT", payload: id });
   };
 
@@ -67,7 +67,7 @@ const CartProvider = ({ children }) => {
         removeItem,
         clearCart,
         setDecrease,
-        setIncrement,
+        setIncrease,
       }}>
       {children}
     </CartContext.Provider>

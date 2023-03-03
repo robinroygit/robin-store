@@ -89,6 +89,7 @@ ${"" /* resuable code section  */}
   margin: 0 auto;
 }
 
+
 .grid {
   display: grid;
   gap: 9rem;
@@ -159,15 +160,18 @@ input, textarea{
 
 @media (max-width: ${({ theme }) => theme.media.tab}) {
     .container {
-    max-width: 130rem;
-    padding: 0 3.2rem;
+    max-width: 110rem;
+    padding: 0 2.2rem;
+    
   }
+ 
   }
 
    @media (max-width: ${({ theme }) => theme.media.mobile}) {
        html {
       font-size: 50%;
     }
+
 
 .grid{
   gap: 3.2rem;

@@ -86,6 +86,8 @@ const cartReducer = (state, action) => {
       });
       return { ...state, cart: updatedProduct };
     }
+
+    
   
     if (action.type === "REMOVE_ITEM") {
       let updatedCart = state.cart.filter(
