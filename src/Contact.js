@@ -1,4 +1,5 @@
 import { useAuth0 } from "@auth0/auth0-react";
+import { useEffect } from "react";
 import styled from "styled-components";
 
 const Contact = () => {
@@ -37,6 +38,9 @@ const Contact = () => {
     }
   `;
 
+useEffect(() => {
+  window.scrollTo(0, 500)
+}, [])
 
   return (
     <Wrapper>
@@ -58,6 +62,7 @@ const Contact = () => {
             method="post"
             className="contact-inputs"
           >
+          <h3>Contact Us</h3>
             <input
               type="text"
               placeholder="username"
